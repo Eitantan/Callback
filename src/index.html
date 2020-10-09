@@ -5,6 +5,7 @@
     <meta name="keywords" content="callback, callback ide">
     <meta name="description" content="A fun IDE to use">
     <title>Callback</title>
+    <script src="/js/indx.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
       
@@ -32,25 +33,9 @@
         height: 35em;
       }
     </style>
-    <script type="text/javascript">
-      function compile() {
-        var html = document.getElementById("html");
-        var css = document.getElementById("css");
-        var js = document.getElementById("js");
-        var code = document.getElementById("code").contentWindow.document;
-        
-        document.body.onkeyup = function(){
-          code.open();
-          code.writeln(`${html.value}<style>${css.value}</style><script>${js.value}<${"/"}script>`);
-          code.close();
-        }
-      }
-    
-      window.onload = compile();
-    </script>
   </head>
   <body>
-    <textarea id="html" placeholder="HTML here...">
+    <textarea id="html" placeholder="HTML here..." title="HTML">
 &lt!DOCTYPE html&gt
 &lthtml>
   &lthead>
@@ -64,15 +49,14 @@
   &lt/body&gt
 &lt/html&gt
     </textarea>
-    <textarea id="css" placeholder="CSS here...">
+    <textarea id="css" placeholder="CSS here..." title="CSS">
       // You can change this setting by deleting it.
       * {
         padding: 0;
         margin: 0;
       }
     </textarea>
-    <textarea id="js" placeholder="JS here..."></textarea>
+    <textarea id="js" placeholder="JS here..." title="JS"></textarea>
     <iframe id="code"></iframe>
-    
   </body>
 </html>
